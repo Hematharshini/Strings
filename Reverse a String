@@ -1,0 +1,13 @@
+package LearnJava;
+import java.util.*;
+public class Strings {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the String to be reversed: ");
+		String str = sc.nextLine();
+		StringBuilder strs = new StringBuilder();
+		strs.append(str);
+		strs.reverse();
+		System.out.println(strs.toString());
+	}
+}
