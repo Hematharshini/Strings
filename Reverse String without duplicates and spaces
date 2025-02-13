@@ -1,0 +1,25 @@
+package LearnJava;
+import java.util.*;
+import java.lang.*;
+public class StringReversal {
+	public String Reverse(String str, String result) {
+		HashSet<Character> set  = new HashSet<>();
+		for(int i=str.length()-1; i>=0; i--) {
+			char ch = str.charAt(i);
+			if(!set.contains(ch) && !Character.isWhitespace(ch)) {
+				set.add(ch);
+				result += ch;
+			}
+		}
+		return result;
+	}
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Enter a String: ");
+		String str = scanner.nextLine();
+		StringReversal process = new StringReversal();
+		System.out.print("Reversed String: ");
+		System.out.println(process.Reverse(str, ""));
+	}
+
+}
