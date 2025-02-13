@@ -1,0 +1,32 @@
+package LearnJava;
+import java.util.*;
+public class Solution {
+	public String removeElement(String s1, String s2, String s3) {
+		int alpha[] = new int[26];
+		for(int i=0; i<26; i++) {
+			alpha[i] = 0;
+		}
+		for(int i=0; i<s2.length(); i++) {
+			alpha[s2.charAt(i)-'a'] = -1;
+		}
+		for(int i=0; i<s1.length(); i++) {
+			if(alpha[s1.charAt(i)-'a'] != -1) {
+				s3 += s1.charAt(i);
+			}
+		}
+		return s3;
+	}
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Enter the String to be Modified: ");
+		String s1 = scanner.nextLine();
+		System.out.print("Enter the reference String: ");
+		String s2 = scanner.nextLine();
+		String s3 = "";
+		Solution element = new Solution();
+		System.out.print("String entered after modification: ");
+		System.out.println(element.removeElement(s1,s2,s3));
+		
+	}
+
+}
